@@ -8,9 +8,16 @@ calculatorKeys.forEach((element) => {
   });
 });
 
+document.addEventListener("keypress", function (event) {
+  var key = event.key;
+  console.log(key + typeof key);
+  handleKeysInput(key);
+});
+
 function handleKeysInput(value) {
   switch (value) {
     case "=":
+    case "Enter":
       handleEvaluation();
       break;
 
